@@ -78,22 +78,31 @@ com.bci.demo/
 
 1. **Clonar el repositorio**
 ```bash
-git clone <URL-del-repositorio>
+git clone https://github.com/crmorenom/demo.git
 cd demo
 ```
 
 2. **Compilar el proyecto**
 ```bash
-# Windows
-mvnw.cmd clean install
+# Windows PowerShell
+./mvnw clean install
+# Windows cmd
+mvnw clean install
 
 # Linux/Mac
 ./mvnw clean install
 ```
 
 3. **Ejecutar la aplicación**
+
+
 ```bash
 # Opción 1: Con Maven
+# Windows PowerShell 
+./mvnw spring-boot:run
+# Windows cmd
+mvnw spring-boot:run
+# Linux/Mac Con
 ./mvnw spring-boot:run
 
 # Opción 2: Con JAR
@@ -127,7 +136,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.h2.console.settings.web-allow-others=true
 
 logging.level.root=INFO
-logging.level.org.springframework.web=DEBUG
+logging.level.org.springframework.web=INFO
 server.error.include-stacktrace=always
 # Validación de Contraseña (Regex configurable)
 user.password.regex=^(?=.*[A-Z])(?=.*\\d.*\\d)[A-Za-z\\d]{8,12}$
@@ -326,7 +335,7 @@ Authorization: Bearer {eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNv
 #### 5. Actualizar Usuario
 ```http
 PATCH /api/users/{id}
-http://localhost:8081/api/users/b615f837-d57b-4771-8ec5-8e1ebc7af259
+      /api/users/b615f837-d57b-4771-8ec5-8e1ebc7af259
 
 Authorization: Bearer {eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc2MTI3MjQ1MiwiZXhwIjoxNzYxMjc2MDUyfQ.u8H3prqvChetuKCw28lxHj6SwQZmhAec_blgVnkNyCI}
 Content-Type: application/json
@@ -389,7 +398,7 @@ Content-Type: application/json
 #### 6. Eliminar Usuario
 ```http
 DELETE /api/users/{id}
-http://localhost:8081/api/users/b615f837-d57b-4771-8ec5-8e1ebc7af259
+       /api/users/b615f837-d57b-4771-8ec5-8e1ebc7af259
 
 Authorization: Bearer {eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBiY2kuY29tIiwiaWF0IjoxNzYxMjczMDMxLCJleHAiOjE3NjEyNzY2MzF9.3iSbazEtfmt8RuuEeVDDKdFdK0WIvafKcsjLfUMYXUo}
 ```
@@ -657,7 +666,7 @@ Abrir: `target/site/jacoco/index.html`
 - ✅ `UserServiceImplTest` - Lógica de negocio
 - ✅ `UserDetailsServiceImplTest` - Autenticación
 
-![alt text](image.png)
+![alt text](image-2.png)
 
 ---
 
